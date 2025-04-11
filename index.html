@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Wash Exterior Cleaning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Updated Custom styles for enhanced UI - Light Theme and Modern with Inter font */
+      .service-card {
+        background-color: white; /* Light background for service cards */
+        border-radius: 0.75rem; /* Rounded corners */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Subtle shadow */
+        padding: 2rem;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition */
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card:hover {
+        transform: translateY(-0.5rem); /* Slight lift on hover */
+        box-shadow: 0 12px 16px -1px rgba(0, 0, 0, 0.08), 0 4px 6px -1px rgba(0, 0, 0, 0.06); /* Increased shadow on hover */
+      }
+
+      .service-icon {
+        color: #007bff; /* Vibrant blue for icons */
+        margin-right: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .primary-button {
+        background-color: #007bff; /* Primary button color */
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: background-color 0.3s ease-in-out, transform 0.1s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      }
+
+      .primary-button:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+        transform: translateY(-0.25rem); /* Slight lift on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+      }
+
+      .secondary-button {
+        background-color: #e0f2fe; /* Light blue for secondary button */
+        color: #007bff;
+        padding: 0.8rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: background-color 0.3s ease-in-out, transform 0.1s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: 1px solid #007bff;
+      }
+
+      .secondary-button:hover {
+        background-color: #d0e7f5; /* Slightly darker shade on hover */
+        transform: translateY(-0.25rem);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      }
+
+      .section-title {
+        color: #2c3e50; /* Darker heading color */
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4rem; /* Underline width */
+        height: 0.25rem; /* Underline thickness */
+        background-color: #007bff; /* Underline color */
+        border-radius: 0.125rem;
+      }
+
+      .testimonial-card {
+        background-color: #f7fafc; /* Very light background for testimonials */
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        border: 1px solid #edf2f7;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: #1a202c;
+        margin-top: 1rem;
+        display: block;
+        text-align: right;
+      }
+
+      .free-estimate-banner {
+        background-color: #ffdb58; /* Bright yellow banner */
+        color: #1a202c;
+        padding: 1.25rem;
+        border-radius: 0.75rem;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .free-estimate-icon{
+        height: 2rem;
+      }
+
+      .before-after-image-container {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .before-after-image-wrapper {
+        width: 45%;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: 1px solid #e2e8f0;
+      }
+
+      .before-after-image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-label {
+        text-align: center;
+        margin-top: 0.5rem;
+        font-weight: 500;
+        color: #4a5568;
+      }
+      .footer {
+        background-color: #2d3748; /* Darker footer background */
+        color: #f7fafc;
+        padding: 2.5rem 0;
+        text-align: center;
+        border-top-left-radius: 0.75rem;
+        border-top-right-radius: 0.75rem;
+        margin-top: 4rem;
+      }
+
+      .footer-text {
+        font-size: 0.875rem;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .social-icon-link {
+        color: #cbd5e0;
+        transition: color 0.2s ease-in-out;
+        font-size: 1.5rem;
+      }
+
+      .social-icon-link:hover {
+        color: #fff;
+      }
+      .whatsapp-button {
+        background-color: #25d366; /* WhatsApp Green */
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: background-color 0.3s ease-in-out, transform 0.1s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        margin-top: 1rem;
+      }
+
+      .whatsapp-button:hover {
+        background-color: #128c7e; /* Darker shade on hover */
+        transform: translateY(-0.25rem); /* Slight lift on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+      }
+
+    </style>
+</head>
+<body class="bg-gray-100 font-inter"> <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABg5ERXAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAAHAABAAAAdgDpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAC0lEQVR4Ae3Xv0oDQRjG8d/vYjW2sVnZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dpZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2dlZ2xpZ2J0IG1hZ2ljIGJ1dHRvbiBmaWxlIGZvciB3aGF0c2FwcC4gVGhhdCB3YXMgc28gc3BlY2lmaWMgaXQga2luZGEgbG9zdCB0aGUgY2hhdCBzdHlsZSBhIGJpdC4gSSBjYW4gZml4IGl0LiA6KS0pXQAAAABJRU5ErkJggg==" alt="White Wash Logo" class="mr-3">
+                <h1 class="text-3xl font-bold text-blue-600">White Wash</h1>
+            </div>
+            <nav class="hidden md:block">
+                <a href="#services" class="text-gray-700 hover:text-blue-600 mx-4 font-semibold transition duration-300">Services</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 mx-4 font-semibold transition duration-300">Testimonials</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 mx-4 font-semibold transition duration-300">Contact</a>
+                <a href="tel:555-123-4567" class="text-blue-600 hover:text-blue-800 mx-4 font-semibold transition duration-300">Call Us</a>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-white w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-gray-700 focus:outline-none" aria-label="Close Menu">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <a href="#services" class="block text-gray-800 hover:text-blue-600 my-4 font-semibold text-lg transition duration-300">Services</a>
+                <a href="#testimonials" class="block text-gray-800 hover:text-blue-600 my-4 font-semibold text-lg transition duration-300">Testimonials</a>
+                <a href="#contact" class="block text-gray-800 hover:text-blue-600 my-4 font-semibold text-lg transition duration-300">Contact</a>
+                <a href="tel:555-123-4567" class="block text-blue-600 hover:text-blue-800 my-4 font-semibold text-lg transition duration-300">Call Us</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container mx-auto">
+        <div class="free-estimate-banner">
+            <img src="https://cdn-icons-png.flaticon.com/512/5444/5444362.png" alt="Free Estimate" class="free-estimate-icon" />
+            <span>Get a FREE Estimate!</span>
+        </div>
+
+        <section id="services" class="py-10">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card">
+                    <h3 class="flex items-center text-lg font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="service-icon w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v-.66a3.75 3.75 0 00-3.75-3.75h-1.5a3.75 3.75 0 00-3.75 3.75v.66m7.5 0h-1.5m-1.5 0l-1.036-1.036a2.625 2.625 0 013.713-3.713L12 15.75m3.75 1.5v-3.375c0-.621-.504-1.125-1.125-1.125h-1.5c-.621 0-1.125.504-1.125 1.125v3.375m1.5 0h-1.5m-1.5 0l-1.036 1.036a2.625 2.625 0 003.713 3.713L12 18.75" />
+                        </svg>
+                        House Washing
+                    </h3>
+                    <p class="text-gray-700 mb-4">Gentle and effective cleaning of your home's exterior, removing dirt, grime, and mildew.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="flex items-center text-lg font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="service-icon w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6m-3-3v6m-3-3a3 3 0 116 0 3 3 0 01-6 0z" />
+                        </svg>
+                        Roof Cleaning
+                    </h3>
+                    <p class="text-gray-700 mb-4">Safe removal of algae, moss, and debris from your roof, extending its lifespan.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="flex items-center text-lg font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="service-icon w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+
+                        Gutter Cleaning
+                    </h3>
+                    <p class="text-gray-700 mb-4">Thorough cleaning of gutters and downspouts to prevent water damage.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="flex items-center text-lg font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="service-icon w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10v2a8 8 0 008 8h2M3 10l10 10M7.757 4.334a7.5 7.5 0 019.92-1.942A12.03 12.03 0 0021 12a13 13 0 01-2.916 5.782a7.5 7.5 0 01-11.435-4.365M12 20a8 8 0 100-16 8 8 0 000 16z" />
+                        </svg>
+                        Pressure Washing
+                    </h3>
+                    <p class="text-gray-700 mb-4">High-pressure cleaning for driveways, sidewalks, and other hard surfaces.</p>
+                </div>
+                 <div class="service-card">
+                    <h3 class="flex items-center text-lg font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="service-icon w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-1.244L5.602 6.632a9.002 9.002 0 0112.796 0l3.564 4.446a1.012 1.012 0 010 1.244l-3.564 4.446a9.002 9.002 0 01-12.796 0L2.036 12.322z" />
+                        </svg>
+                        Window Cleaning
+                    </h3>
+                    <p class="text-gray-700 mb-4">Professional window cleaning for streak-free results.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="flex items-center text-lg font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="service-icon w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.218 0 7.5-3.282 7.5-7.5s-3.282-7.5-7.5-7.5-7.5 3.282-7.5 7.5S7.782 20.25 12 20.25z" />
+                        </svg>
+                        Deck Cleaning
+                    </h3>
+                    <p class="text-gray-700 mb-4">Revitalize your deck with our specialized cleaning services.</p>
+                </div>
+            </div>
+            <a href="#contact" class="primary-button">Request a Free Quote</a>
+        </section>
+
+        <section class="py-10 bg-gray-50">
+            <h2 class="section-title">Before & After</h2>
+             <div class="before-after-image-container">
+                <div class="before-after-image-wrapper">
+                    <img src="https://via.placeholder.com/400x300/E0E0E0/C0C0C0?text=Before" alt="Before Cleaning" class="before-after-image">
+                </div>
+                <div class="before-after-image-wrapper">
+                    <img src="https://via.placeholder.com/400x300/81C784/F0F4C3?text=After" alt="After Cleaning" class="before-after-image">
+                </div>
+            </div>
+            <div class="flex justify-center">
+                 <a href="https://wa.me/15551234567" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" class="w-6 h-6">
+                        <path fill="#fff" d="M27.1 4.9C29.4 7.3 31 10.8 31 15.1c0 4.3-2.5 8.2-6.3 10.1l-0.5 0.3-3.5 1c-1-3-1.4-5.8-2.1-9.2l-0.1-0.2c-0.3-0.7-1-1.2-1.7-1.2h-4.2c-1 0-1.8 0.8-1.8 1.7 0 0.7 0.2 1.3 0.6 1.8 0.4 0.5 0.4 1.1 0.4 1.8 0 3.3 2 6.4 5.2 8.1 0.5 0.3 0.8 0.5 1.2 0.5h0.1c0.5 0 1-0.3 1.3-0.7 0.2-0.3 2.1-2.6 2.1-4.8 0-2.1-1.5-3.7-1.8-4-0.2-0.2-0.9-1-3.4-1-0.9 0-1.7 0.3-2.4 0.8-0.7 0.5-2.4 2.4-2.4 5.8 0 2.1 1.3 3.5 1.7 3.8 0.4 0.3 0.8 0.4 1.2 0.4h0.1c0.4 0 0.8-0.1 1.1-0.4 0.3-0.3 1-1.3 1-1.3s-0.4-0.9-0.9-1.9c-0.5-1-1-1.8-1-2.6 0-0.7 0.5-1.2 1.1-1.2h4.2c0.8 0 1.5 0.5 1.7 1.2l0.1 0.2c0.7 3.5 1.1 6.1 2.1 9.2l3.5-1 0.5-0.3c3.8-1.9 6.3-5.8 6.3-10.1 0-6-4.9-10.9-10.9-10.9-3 0-5.8 1.5-7.8 3.8C5.1 7.7 4.4 9.6 4.4 11.5c0 3.8 3.1 6.9 6.9 6.9h0.1c0.5 0 0.9-0.2 1.2-0.5 3.2-1.8 5.2-4.9 5.2-8.1 0-0.7-0.1-1.4-0.4-1.8-0.4-0.5-1.1-0.8-1.8-0.8h-4.2z"/>
+                    </svg>
+                    Contact via WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-10">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="testimonial-card">
+                    <p class="text-gray-700 italic">"White Wash did an amazing job on our house. It looks brand new! The team was professional, on time, and very thorough. I highly recommend their services."</p>
+                    <span class="testimonial-author">- Sarah M.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p class="text-gray-700 italic">"We had our roof cleaned and are extremely satisfied with the results. The difference is incredible. Their attention to detail was impressive."</p>
+                    <span class="testimonial-author">- John P.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-10 bg-gray-100">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="text-center">
+                <p class="text-gray-700 text-lg mb-4">
+                    Ready to transform your home's exterior? Contact us today for a free quote!
+                </p>
+                <p class="text-gray-700">
+                    Phone: <a href="tel:555-123-4567" class="text-blue-600 hover:text-blue-800 transition duration-300">555-123-4567</a>
+                </p>
+                <p class="text-gray-700">
+                    Email: <a href="mailto:info@whitewashexteriorcleaning.com" class="text-blue-600 hover:text-blue-800 transition duration-300">info@whitewashexteriorcleaning.com</a>
+                </p>
+                <a href="#contact" class="primary-button mt-6">Get a Free Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 White Wash Exterior Cleaning. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" class="social-icon-link" aria-label="Facebook">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642-1.062l.358-4H14v-3.5c0-1.037.832-1.921 1.852-1.921h3.148v-4H15.996c-4.144 0-6.286 2.598-6.286 6.363V8z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path d="M19.633 7.956c.388.043.776.072 1.163.085a14.685 14.685 0 01-4.117 1.132A4.922 4.922 0 0021.227 4s-1.446 2.6-4.064 3.38A9.454 9.454 0 0013 3c-2.756 0-4.973 2.145-4.973 4.792 0 .377.043.753.12 1.115a13.941 13.941 0 00-10.752-5.43c-.58.981-.92 2.115-.92 3.302 0 1.141.566 2.147 1.42 2.729a4.925 4.925 0 00-2.029-.56c-.057 1.18 1.04 2.285 2.185 2.325a4.924 4.924 0 01-2.23 0 4.94 4.94 0 003.087 3.695 9.482 9.482 0 01-6.135 1.927c-.121 2.103 1.308 3.972 3.213 4.017a9.44 9.44 0 01-8.315 3.455c-.162.28-.529.448-.9.448-.083 0-.166 0-.248-.015C2.868 21.84 6.049 23 9.88 23c11.834 0 18.368-9.886 18.368-18.367 0-.284-.008-.568-.02-.85a13.916 13.916 0 003.823-3.955z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="Instagram">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path d="M8 0a8 8 0 00-8 8v8a8 8 0 008 8h8a8 8 0 008-8V8a8 8 0 00-8-8zm8 9.8a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4zM12.7 16.1a3.4 3.4 0 110-6.8 3.4 3.4 0 010 6.8z"/>
+                    <path d="M20 2.47a2.33 2.33 0 01-1.64.688 2.31 2.31 0 01-1.64-.687l-.1-.153a2.34 2.34 0 01-.687-1.64 2.31 2.31 0 01.688-1.64l.153.1a2.34 2.34 0 011.64-.688 2.31 2.31 0 011.64.687l.1.154a2.34 2.34 0 01.687 1.64 2.31 2.31 0 01-.688 1.64z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+        }
+
+        hamburgerBtn.addEventListener("click", toggleMobileMenu);
+        closeMenuBtn.addEventListener("click", toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener("click", toggleMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+toggleMobileMenu();
+            }
+        });
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+       window.addEventListener('scroll', updateActiveNavLink);
+
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
